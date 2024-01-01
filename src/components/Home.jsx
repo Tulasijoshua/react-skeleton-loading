@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import UserCard from "./UserCard";
+import CardSkeleton from "./CardSkeleton";
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -19,6 +20,7 @@ const Home = () => {
       <h1 style={{ marginBottom: "1.5rem" }}>Users</h1>
       <div className="user-container">
         {isLoading && <p>Loading...</p>}
+        <CardSkeleton />
 
         {users.map((user) => (
           <UserCard user={user} key={user.id} />
