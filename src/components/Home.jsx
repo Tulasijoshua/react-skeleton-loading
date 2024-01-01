@@ -19,8 +19,9 @@ const Home = () => {
     <>
       <h1 style={{ marginBottom: "1.5rem" }}>Users</h1>
       <div className="user-container">
-        {isLoading && <p>Loading...</p>}
-        <CardSkeleton />
+        {/* {isLoading && <p>Loading...</p>} */}
+        {isLoading && <CardSkeleton cards={8} />}
+        
 
         {users.map((user) => (
           <UserCard user={user} key={user.id} />
